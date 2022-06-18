@@ -1,0 +1,18 @@
+<h1>商品情報編集</h1>
+
+<%= form_with(model: @product, local: true) do |f| %>
+  <%= f.label :name, "商品名" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :price, "価格" %>
+  <%= f.text_field :price %>
+
+  <%= f.label :stock, "在庫数" %>
+  <%= f.text_field :stock %>
+
+  <%= f.label :descripion, "商品概要" %>
+  <%= f.text_field :description %>
+
+  <%= f.submit "更新" %>
+  <%= link_to 'キャンセル', root_path %>
+<% end %>

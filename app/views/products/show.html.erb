@@ -1,0 +1,10 @@
+<h1><%= @product.name %>の詳細ページ</h1>
+
+<span>商品名：</span><%= @product.name %> <br>
+<span>価格：</span> <%= @product.price %> <br>
+<span>在庫数：</span><%= @product.stock %> <br>
+<span>商品概要：</span> <br><%= @product.description %>
+
+<%= link_to "商品一覧", root_url %>
+<%= link_to 'この商品を削除する', @product , method: :delete,
+                               data: { confirm: "本当に削除しますか？" } %>

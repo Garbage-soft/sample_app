@@ -1,0 +1,12 @@
+<% @title = "商品一覧" %>
+<h1><%= @title %></h1>
+
+<%= link_to '商品登録', 'products/new' %>
+
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      <%= link_to product.name, product %>
+    </li>
+  <% end %>
+</ul>
