@@ -47,3 +47,19 @@ footer{
       margin-right: 10px;
     }
 }
+
+/* products/index */
+
+.product-item {
+  width: 250px;
+  height: 350px;
+  border: 1px solid black;
+  float: left;
+  margin: 20px;
+  .image {
+    width: 220px;
+    height: 220px;
+    border: 1px solid red;
+    margin: 10px auto;
+  }
+}

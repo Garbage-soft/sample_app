@@ -5,9 +5,15 @@
 
 <ul>
   <% @products.each do |product| %>
-    <li>
-      <%= link_to product.name, product %>
-      <p><%= product.price  %></p>
-    </li>
+    <div class="product-item">
+      <div class="image">
+        ここには商品画像が入る（後で実装）
+      </div>
+      <li>
+        <p>商品名：<%= link_to product.name, product %></p>
+        <p>価格：<%= product.price  %>円</p>
+        <%= link_to 'この商品を削除', product, method: :delete, data: { confirm: "この商品を削除します" } %>
+      </li>
+    </div>
   <% end %>
 </ul>
