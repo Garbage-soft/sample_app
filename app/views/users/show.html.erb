@@ -1,3 +1,8 @@
 <h1><%= @user.name %></h1>
 
 <p><%= @user.email %></p>
+
+<%= link_to 'ユーザー情報を編集する', edit_user_path, class: "btn btn-warning" %>
+<%= link_to '退会する（アカウントを削除する）', user_path, method: :delete,
+                                           data: { confirm: "アカウントを削除して退会します。よろしいですか？" },
+                                           class: "btn btn-danger" %>
