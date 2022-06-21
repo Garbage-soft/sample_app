@@ -1,18 +1,24 @@
 <h1>商品登録</h1>
 
-<%= form_with(model: @product, local: true) do |f| %>
-  <%= f.label :name, "商品名" %>
-  <%= f.text_field :name %>
+<!-- Bootstrapを使用して暫定的に見た目を整えているが、ここのフォームはレイアウトを適した形に変更する -->
 
-  <%= f.label :price, "価格" %>
-  <%= f.text_field :price %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: @product, local: true) do |f| %>
+      <%= f.label :name, "商品名" %>
+      <%= f.text_field :name %>
 
-  <%= f.label :stock, "在庫数" %>
-  <%= f.text_field :stock %>
+      <%= f.label :price, "価格" %>
+      <%= f.text_field :price %>
 
-  <%= f.label :descripion, "商品概要" %>
-  <%= f.text_field :description %>
+      <%= f.label :stock, "在庫数" %>
+      <%= f.text_field :stock %>
 
-  <%= f.submit "登録" %>
-  <%= link_to 'キャンセル', root_path %>
-<% end %>
+      <%= f.label :descripion, "商品概要" %>
+      <%= f.text_field :description %>
+
+      <%= f.submit "登録", class: "btn btn-primary" %>
+      <%= link_to 'キャンセル', root_path, class: "btn btn-default btn-block" %>
+    <% end %>
+  </div>
+</div>

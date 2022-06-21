@@ -12,6 +12,7 @@
       <li>
         <p>商品名：<%= link_to product.name, product %></p>
         <p>価格：<%= product.price  %>円</p>
+        <%= link_to '編集', edit_product_path(product) %>
         <%= link_to 'この商品を削除', product, method: :delete, data: { confirm: "この商品を削除します" } %>
       </li>
     </div>
