@@ -3,10 +3,10 @@
     <%= link_to 'サンプルアプリ', root_path, id: 'logo' %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <% if logged_in? %>
+        <% if logged_in? %> <!-- ログインしている場合のヘッダーリンク -->
           <li><%= link_to 'ユーザーページ', current_user %></li>
           <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
-        <% else %>
+        <% else %>          <!-- ログインしていない場合のヘッダーリンク -->
           <li><%= link_to 'ユーザー登録', signup_path %></li>
           <li><%= link_to 'ログイン', login_path %></li>
         <% end %>

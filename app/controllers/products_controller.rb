@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
+      flash[:success] = "新しい商品を登録しました。"
       redirect_to root_url
       # redirect_to product_url(@product)
     else
@@ -28,6 +29,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
+      flash[:success] = "商品情報を変更しました。"
       redirect_to @product
     else
       render 'edit'
@@ -36,6 +38,7 @@ class ProductsController < ApplicationController
 
   def destroy
     Product.find(params[:id]).destroy
+    flash[:success] = "商品情報を削除しました。"
     redirect_to products_url
   end
 
