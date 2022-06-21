@@ -1,6 +1,6 @@
 <h1>ログインフォーム</h1>
 
-<%= form_with(model: @session, local:true) do |f| %>
+<%= form_with(url: login_path, scope: :session, local: true) do |f| %>
 
   <%= f.label :email, "メールアドレス" %>
   <%= f.text_field :email %>
@@ -8,5 +8,5 @@
   <%= f.label :password, "パスワード" %>
   <%= f.password_field :password %>
 
-  <%= f.submit "ログイン" %>
+  <%= f.submit "ログイン", class: "btn btn-primary" %>
 <% end %>
