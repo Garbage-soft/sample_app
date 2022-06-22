@@ -1,0 +1,19 @@
+<div id="progress">
+  <h4>★ ユーザーアカウントの初期データ</h4>
+
+  <table border="1">
+    <tr><th>アカウント名</th><th>メールアドレス</th><th>パスワード</th><th>管理者権限</th></tr>
+    <tr><td>Administrator</td><td>admin@example.com</td><td>footer</td><td>あり</td></tr>
+    <tr><td>Test User</td><td>test@example.com</td><td>password</td><td>なし</td></tr>
+  </table>
+
+  <h4>★ 認可動作の確認について</h4>
+  <h5>★ログインしていない状態</h5>
+  <li>・ログインしていない状態で <a href="https://vast-harbor-41701.herokuapp.com/users/1/edit">ユーザーID:1 を編集するページのリンク</a>を踏むと
+     ログインページにリダイレクトする。ログインしていなければユーザー編集を行うことはできない。</li>
+  <li>・同様に<a href="https://vast-harbor-41701.herokuapp.com/products/1/edit">商品ID:1 を編集するページのリンク</a>を踏んでも同様に
+     ログインページにリダイレクトする。</li>
+
+  <h5>★管理者権限なし（Test User）でログインした場合</h5>
+  <li><a href="https://vast-harbor-41701.herokuapp.com/products/new">商品ID:1 を登録するページのリンク</a>を踏んでもエラーメッセージとともにログインページにリダイレクトする。管理者権限を持つアカウントでなければ商品の登録・<a href="https://vast-harbor-41701.herokuapp.com/products/1/edit">編集</a>・削除を行うことはできない</li>
+</div>

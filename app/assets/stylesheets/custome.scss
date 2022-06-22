@@ -17,6 +17,16 @@ a {
   text-decoration: none;
 }
 
+/* 進捗報告・動作確認用 */
+
+#progress {
+  margin-top: 500px;
+  border: 1px solid red;
+  tr, th, td {
+    padding: 3px;
+  }
+}
+
 /* CSS初期化 */
 
 * {
@@ -54,8 +64,8 @@ footer{
   width: 100%;
   height: 60px;
   background-color: lightgray;
-  position: absolute;/*←絶対位置*/
-  bottom: 0; /*下に固定*/
+  // position: absolute;/*←絶対位置*/
+  // bottom: 0; /*下に固定*/
   z-index: 10;
   p {
     float: right;
