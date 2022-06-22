@@ -9,7 +9,11 @@ class SessionsController < ApplicationController
       # ユーザーログイン後にユーザー情報のページにリダイレクトする
       log_in @user
       flash[:success] = "ログインしました。"
-      redirect_to @user
+      if @user.admin?
+        redirect_to root_url
+      else
+        redirect_to @user
+      end
     else
       # エラーメッセージを作成する
       render 'new'

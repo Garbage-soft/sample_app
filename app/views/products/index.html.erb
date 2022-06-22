@@ -1,7 +1,9 @@
 <% @title = "商品一覧" %>
 <h1><%= @title %></h1>
 
-<%= link_to '商品登録', 'products/new' %>
+<% if admin_logged_in? %>
+  <%= link_to '商品登録', 'products/new' %>
+<% end %>
 
 <ul>
   <% @products.each do |product| %>
@@ -12,8 +14,10 @@
       <li>
         <p>商品名：<%= link_to product.name, product %></p>
         <p>価格：<%= product.price  %>円</p>
-        <%= link_to '編集', edit_product_path(product) %>
-        <%= link_to 'この商品を削除', product, method: :delete, data: { confirm: "この商品を削除します" } %>
+        <% if admin_logged_in? %>
+          <%= link_to '編集', edit_product_path(product) %>
+          <%= link_to 'この商品を削除', product, method: :delete, data: { confirm: "この商品を削除します" } %>
+        <% end %>
       </li>
     </div>
   <% end %>

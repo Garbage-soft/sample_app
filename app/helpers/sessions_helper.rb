@@ -17,6 +17,15 @@ module SessionsHelper
     !current_user.nil?
   end
 
+  # admin権限を持つユーザーがログインしていればtrue、その他ならfalseを返す
+  def admin_logged_in?
+    if !current_user.nil?
+      if current_user.admin?
+        return true
+      end
+    end
+  end
+
   # 現在のユーザーをログアウトする
   def log_out
     session.delete(:user_id)
