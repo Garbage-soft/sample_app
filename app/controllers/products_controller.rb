@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  before_action :logged_in_admin_user, only: [:edit, :update, :destroy]
+  before_action :correct_admin_user,   only: [:show, :edit, :update, :destroy]
+
   def index
     @products = Product.all
   end
@@ -46,5 +49,19 @@ class ProductsController < ApplicationController
 
     def product_params
       params.require(:product).permit(:name, :price, :stock, :description)
+    end
+
+    # 管理者がログイン済みかどうか確認
+    def logged_in_admin_user
+      unless admin_logged_in?
+        flash[:danger] = "運営者アカウントでログインしてください。"
+        redirect_to login_url
+      end
+    end
+
+    # 管理者権限があるかどうか確認
+    def correct_admin_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless @user.admin?
     end
 end
