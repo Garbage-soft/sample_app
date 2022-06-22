@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
         redirect_to @user
       end
     else
-      # エラーメッセージを作成する
+      flash.now[:danger] = "メールアドレス または パスワードが間違っています。"
       render 'new'
     end
   end
