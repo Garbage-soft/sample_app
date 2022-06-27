@@ -9,7 +9,7 @@
   <% @products.each do |product| %>
     <div class="product-item">
       <div class="image">
-        <%= image_tag product.image[0] if product.image.attached? %>
+        <%= image_tag product.display_image_index if product.image.attached? %>
       </div>
       <li>
         <p>商品名：<%= link_to product.name, product %></p>
