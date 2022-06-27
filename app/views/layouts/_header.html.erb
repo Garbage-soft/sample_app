@@ -4,7 +4,7 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %> <!-- ログインしている場合のヘッダーリンク -->
-          <li><%= link_to 'ユーザーページ', current_user %></li>
+          <li><%= link_to current_user.name, current_user %></li>
           <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
         <% else %>          <!-- ログインしていない場合のヘッダーリンク -->
           <li><%= link_to 'ユーザー登録', signup_path %></li>
