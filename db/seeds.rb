@@ -9,8 +9,7 @@ User.create!(name:  "Administrator",
 User.create!(name:  "Test User",
              email: "test@example.com",
              password:              "password",
-             password_confirmation: "password",
-             admin: true)
+             password_confirmation: "password")
 
 # テスト用の商品を追加する
 Product.create!(name: "テスト商品",
