@@ -9,7 +9,7 @@
   <% @products.each do |product| %>
     <div class="product-item">
       <div class="image">
-        ここには商品画像が入る（後で実装）
+        <%= image_tag product.image[0] if product.image.attached? %>
       </div>
       <li>
         <p>商品名：<%= link_to product.name, product %></p>

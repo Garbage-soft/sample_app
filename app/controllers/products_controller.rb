@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :logged_in_admin_user, only: [:new, :edit, :update, :destroy]
-  before_action :correct_admin_user,   only: [:edit, :update, :destroy]
+  before_action :correct_admin_user,   only: [:edit]
 
   def index
     @products = Product.all
@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.image.attach(params[:product][:image])
     if @product.save
       flash[:success] = "新しい商品を登録しました。"
       redirect_to root_url
@@ -48,7 +49,7 @@ class ProductsController < ApplicationController
   private
 
     def product_params
-      params.require(:product).permit(:name, :price, :stock, :description)
+      params.require(:product).permit(:name, :price, :stock, :description, :image)
     end
 
     # 管理者がログイン済みかどうか確認
